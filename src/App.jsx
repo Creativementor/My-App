@@ -2,34 +2,38 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Button from './components/Button'
+import landingPageData from './constant/webData'
+import { data } from 'autoprefixer'
+import Header from './components/Header'
+import Hero from './components/hero'
+import Features from './components/Features'
+import Testimonials from './components/Testimonials'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  console.log(landingPageData);
+
+  const { header, hero, features, testimonials } = landingPageData;
+
+  const user = {
+    isLogin: true,
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <Header header={header} user={user} />
+      <Hero hero={hero} />
+      <Features features={features} />
+      <Testimonials testimonials={testimonials} />
+      <Footer header={header} />
+
     </>
-  )
+
+
+  );
 }
 
-export default App
+export default App;
