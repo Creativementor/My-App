@@ -26,7 +26,6 @@ function App() {
   
 
       <Header header={header} user={user} />
-      <h1>Welcome to My Webpage</h1>
       <Hero hero={hero} />
       <Features features={features} />
       <Testimonials testimonials={testimonials} />
